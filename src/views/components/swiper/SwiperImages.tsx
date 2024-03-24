@@ -42,21 +42,25 @@ const SwiperImages = (props: Data) => {
       <Box className='navigation-wrapper' style={{ height: '100%' }}>
         <Box ref={sliderRef} className='keen-slider' style={{ height: '100%' }}>
           {listData.map((e: any, i: any) => (
-            <Box key={i} className='keen-slider__slide' style={{
-              width: '100%', // Chiều rộng cố định
-              backgroundColor: 'black', // Màu nền
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: `calc(4 * 3 * 2.7vw)`,
-            }}>
-              {(e.includes("/images") ? (
+            <Box
+              key={i}
+              className='keen-slider__slide'
+              style={{
+                width: '100%', // Chiều rộng cố định
+                backgroundColor: 'black', // Màu nền
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: `calc(4 * 3 * 2.7vw)`
+              }}
+            >
+              {e.includes('/images') ? (
                 <img style={style} src={e} alt='image' />
-              ) : e.includes("/videos") ? (
+              ) : e.includes('/videos') ? (
                 <video autoPlay controls muted loop style={{ width: '100%', height: '100%' }}>
                   <source src={e} />
                 </video>
-              ) : null)}
+              ) : null}
             </Box>
           ))}
         </Box>
@@ -72,32 +76,31 @@ const SwiperImages = (props: Data) => {
 
             <Icon
               icon='tabler:chevron-right'
-              className={clsx('arrow arrow-right', {
-                'arrow-disabled': currentSlide === instanceRef.current.track.details.slides.length - 1
-              })}
+              className={clsx('arrow arrow-right')}
               onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()}
             />
           </>
         )}
       </Box>
       {loaded && instanceRef.current && (
-        <Box className='swiper-dots'>
-          {[...Array(instanceRef.current.track.details.slides.length).keys()].map(idx => {
-            return (
-              <Badge
-                key={idx}
-                variant='dot'
-                component='div'
-                className={clsx({
-                  active: currentSlide === idx
-                })}
-                onClick={() => {
-                  instanceRef.current?.moveToIdx(idx)
-                }}
-              ></Badge>
-            )
-          })}
-        </Box>
+        // <Box className='swiper-dots'>
+        //   {[...Array(instanceRef.current.track.details.slides.length).keys()].map(idx => {
+        //     return (
+        //       <Badge
+        //         key={idx}
+        //         variant='dot'
+        //         component='div'
+        //         className={clsx({
+        //           active: currentSlide === idx
+        //         })}
+        //         onClick={() => {
+        //           instanceRef.current?.moveToIdx(idx)
+        //         }}
+        //       ></Badge>
+        //     )
+        //   })}
+        // </Box>
+        <></>
       )}
     </>
   )
