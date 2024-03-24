@@ -1,0 +1,59 @@
+.boxcomment ul{
+    list-style: none;
+
+}
+.boxcomment {
+    margin-top: 4px; /* Adjust as needed */
+  }
+  
+  /* Style for the main comment and its replies */
+  .main {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Style for each comment item */
+  .main > li {
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  /* Style for the comment content */
+  .boxcomment > ul > li > .boxcomment {
+    border: 1px solid #ccc; /* Add border style for nested comments */
+    border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+    padding: 10px; /* Optional: Add padding for better spacing */
+    margin-top: 10px; /* Optional: Adjust spacing between nested comments */
+    /* Add more styles as needed */
+  }
+  
+  /* Style for the avatar */
+  .boxcomment .MuiAvatar-root {
+    width: 35px;
+    height: 35px;
+    /* Add more styles as needed */
+  }
+  
+  /* Style for the comment text */
+  .boxcomment h4 {
+    margin: 0;
+    text-align: left;
+    font-weight: 800;
+    /* Add more styles as needed */
+  }
+  
+  .boxcomment p {
+    text-align: left;
+    /* Add more styles as needed */
+  }
+  
+  .boxcomment p.color-gray {
+    color: gray;
+    /* Add more styles as needed */
+  }
+  
+  /* Style for the posted time */
+  .boxcomment p.color-gray.posted-time {
+    /* Add more styles as needed */
+  }
+  
+  /* Additional styles for other elements if needed */
